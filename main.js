@@ -38,7 +38,7 @@ for (mesasOcupadasTerraza = 0; mesasOcupadasTerraza <=14; mesasOcupadasTerraza +
     console.log("Ok " + nombreDinamico + ", subí por la escalera y seras ubicado en la terraza");    
 }
 
-*/
+//Desafio Clase 4
 
 let picada = 50;
 let sopaDeCalabaza = 35;
@@ -58,3 +58,25 @@ function precioTotal (entrada, platoPrincipal, postre){
 precioTotal (picada, milanesaConPure, helado);
 precioTotal (vitelTone, ensaladaCesar, flan);
 precioTotal (sopaDeCalabaza, tallarinesConTuco, tarta);
+
+*/
+
+function PrecioProducto (precio){ 
+    console.log('El precio al publico del producto seleccionado es $'+precio);
+    const precioProducto = precio;
+    return precioProducto;
+}
+
+function aplicarDescuento (descuento){
+    console.log('Por ser socio se aplica en tus compras un descuento de $'+descuento);
+    const precioSocio = precioProducto - descuento;
+    return precioSocio;
+}
+
+function precioConDescuento (){
+    return console.log("Por ser socio, el precio final a pagar sera $"+precioSocio);
+}
+
+PrecioProducto(1000);
+aplicarDescuento (250);
+precioConDescuento ();
