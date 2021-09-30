@@ -92,8 +92,6 @@ PrecioProducto(5000);
 aplicarDescuento (500);
 precioConDescuento ();
 
-*/
-
 //Desafio Clase 5
 
 class Comida {
@@ -120,8 +118,6 @@ comida1.descuentoPrimavera();
 comida2.descuentoPrimavera();
 comida1.ordenar();
 comida3.ordenar();
-
-/*
 
 //Desafio Clase 6
 
@@ -155,3 +151,41 @@ for (const comida of comidas) {
     console.log(comida.precio);
 }
 */
+
+//Desafio Complementario Clase 6
+
+class Comida {
+    constructor(nombre, precio){
+        this.nombre = nombre.toUpperCase();
+        this.precio = Number(precio);
+        this.ordenado = false;
+    }
+    descuentoPrimavera(){
+        this.precio = (this.precio*75)/100;
+    }
+    ordenar(){
+        this.ordenado = true;
+    }
+}
+
+const comidas = [];
+comidas.push(new Comida("picada", 50));
+comidas.push(new Comida("milanesaConPure", 150));
+comidas.push(new Comida("flan", 40));
+comidas.push(new Comida("helado", 35));
+comidas.push(new Comida("vitelTone", 60));
+comidas.push(new Comida("tallarinesConTuco", 100));
+
+console.log(comidas)
+
+comidas.sort((a,b) => {
+    if (a.precio > b.precio) {
+        return 1
+    }
+    if (a.precio < b.precio) {
+        return -1
+    }
+    return 0
+})
+
+console.log(comidas);
