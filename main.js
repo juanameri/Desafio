@@ -1,33 +1,33 @@
-const nombreDinamico = prompt("¿Cual es tu nombre?");
-console.log("¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante");
+let mensajeUbicacion = document.getElementById("mensajeUbicacion");
 
-let mensajeBienvenida = document.getElementById("mensajeBienvenida");
-mensajeBienvenida.innerHTML = "¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante";
+let formularioBienvenida = document.getElementById("formulario");
+formularioBienvenida.addEventListener("submit", validarFormulario);
 
+function validarFormulario(e){
+    e.preventDefault();
+    let formulario = e.target
+    console.log(formulario.children[1].value);  
+    console.log(formulario.children[3].value);
+    console.log(formulario.children[5].value);
 
-function ubicacionEnSector(){
-    const cantidadPersonas = Number(prompt("¿Cuantas personas van a ser?"));
-    const fumadores = prompt("¿Alguien fuma?");
+    const nombreDinamico = formulario.children[1].value;
+    const cantidadPersonas = formulario.children[3].value;
+    const fumadores = formulario.children[5].value;
 
     if (fumadores == "si"){
         if (cantidadPersonas >= 5){
-            return mensajeUbicacion.innerHTML = "Ok " + nombreDinamico + ", subí por la escalera de mano derecha y seras ubicado en la terraza";
+            return mensajeUbicacion.innerHTML = "¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante, subí por la escalera de mano derecha y seras ubicado en la terraza";
         } else {
-            return mensajeUbicacion.innerHTML = "Ok " + nombreDinamico + ", subí por la escalera de mano izquierda y seras ubicado en la terraza";
+            return mensajeUbicacion.innerHTML = "¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante, subí por la escalera de mano izquierda y seras ubicado en la terraza";
         }
     } else if (fumadores == "no"){
         if (cantidadPersonas < 5){
-            return mensajeUbicacion.innerHTML = "Ok " + nombreDinamico + ", avanza hacia mano derecha y seras ubicado por un asistente";
+            return mensajeUbicacion.innerHTML = "¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante, avanza hacia mano derecha y seras ubicado por un asistente";
         } else {
-            return mensajeUbicacion.innerHTML = "Ok " + nombreDinamico + ", avanza hacia mano izquierda y seras ubicado por un asistente";
+            return mensajeUbicacion.innerHTML = "¡Hola "+nombreDinamico+"! Bienvenid@ al Restaurante, avanza hacia mano izquierda y seras ubicado por un asistente";
         }
     }
 }
-
-let mensajeUbicacion = document.getElementById("mensajeUbicacion");
-mensajeUbicacion.innerHTML = 
-
-ubicacionEnSector();
 
 class Comida {
     constructor(nombre, precio){
