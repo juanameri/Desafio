@@ -39,6 +39,8 @@ function validarFormulario(e){
 $('#botonFinalizar').append('<button id="boton" id="botonfinalizar">Finalizar orden</button>');
 $("#botonFinalizar").click(function () {
     $('#mensajeDespedida').append("<h2>¡Adios y gracias por elegirnos!</h2>");
+    $("#mensajeUbicacion").slideUp("slow");
+    $("#formulario").slideUp("slow");
     console.log("Respuesta a un click");
 });
 
